@@ -1,0 +1,7 @@
+# In your root .gitignore
+backend/.env
+frontend/.env
+backend/venv
+frontend/node_modules
+frontend/package-lock.json
+.vscode
