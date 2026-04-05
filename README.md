@@ -47,6 +47,23 @@ The frontend serves user interfaces and communicates with the Flask backend via 
 
 3. Open your browser and navigate to the frontend (e.g. `http://localhost:3000`), which will communicate with the Flask backend seamlessly.
 
+## 4. Using Docker Hub Images
+
+You can quickly run the app using the pre-built images on Docker Hub.
+
+### 4.1 Backend (Flask)
+```bash
+docker pull pankajdocker1997/flaskp-td-backend
+docker run -d --name backend -p 5000:5000 pankajdocker1997/flaskp-td-backend
+```
+
+
+### 4.2 Frontend (Express)
+```bash
+docker pull pankajdocker1997/flaskp-td-frontend
+docker run -d --name frontend -p 3000:3000 --link backend pankajdocker1997/flaskp-td-frontend
+
+```
 ---
 
 ##  Project Structure (Suggested)
