@@ -19,7 +19,7 @@ app.post('/create-user', async (req, res) => {
       res.render('index', { error: "All fields are required", name: req.body?.name, email: req.body?.email });
     } else {
       try {
-        const backendUrl = `${process.env.backendUrl}/submit`;
+        const backendUrl = `${process.env.BACKEND_URL}/submit`;
         const response = await axios.post(backendUrl, req.body)
         console.log(response);
         if (response.status === 200) {
