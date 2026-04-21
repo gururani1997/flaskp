@@ -1,10 +1,17 @@
-# FlaskP – Full‑Stack Web Application
+# FlaskP – Full-Stack Web Application
 
 A full-stack web application featuring:
 
-- **Frontend**: Built with **Node.js** and **Express.js**  
-- **Backend**: Built with **Python** and **Flask**  
-- **Infrastructure**: Both services are containerized using **Docker** and orchestrated with **Docker Compose**
+- **Frontend**: Node.js + Express.js  
+- **Backend**: Python + Flask  
+- **Database**: MongoDB  
+- **Infrastructure**: Docker + Kubernetes (Minikube)
+
+---
+
+## 🧠 Architecture Overview
+
+### Docker / Local Setup
 
 ---
 
@@ -15,6 +22,8 @@ A full-stack web application featuring:
 [ Express (Node.js) – Frontend ]
 ↕ HTTP (e.g., REST calls)
 [ Flask (Python) – Backend ]
+↓
+[ MongoDB ]
 
 yaml
 Copy
