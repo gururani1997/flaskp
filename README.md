@@ -120,6 +120,59 @@ networks:
     driver: bridge
 This way, Express can communicate with Flask using http://backend:5000.
 
+
+```## ☸️ Kubernetes Deployment (Minikube)
+
+This project is deployed using **Kubernetes (Minikube)**.  
+The deployment is structured using separate YAML files inside frontend, backend, and database folders.
+
+---
+
+```
+### 5. Kubernetes YAML Structure
+
+```text
+frontend/
+├── frontend-deployment.yaml
+
+backend/
+├── backend-deployment.yaml
+└── mongo-deployment.yaml
+
+```
+### 5.1 Start Minikube
+```bash
+minikube start
+
+```
+### 5.2 Deploy MongoDB
+```bash
+kubectl apply -f backend/mongo-deployment.yaml
+```
+### 5.3 Deploy Backend (Flask API)
+```bash
+kubectl apply -f backend/backend-deployment.yaml
+kubectl apply -f backend/backend-service.yaml
+```
+### 5.4 Deploy Frontend (Express App)
+```bash
+kubectl apply -f frontend/frontend-deployment.yaml
+kubectl apply -f frontend/frontend-service.yaml
+```
+
+### 5.5 Access Application
+  Expose frontend using Minikube:
+```bash
+minikube service frontend-service
+```
+This will open the application in the browser.
+---
+🔗 Service Communication Inside Cluster
+Service	Internal URL
+Frontend	frontend-service:3000
+Backend	backend-service:8000
+MongoDB	mongo-service:27017
+
 Development Workflow
 Modify frontend code → rebuild container → frontend updates reflect immediately
 
